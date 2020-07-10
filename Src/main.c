@@ -95,7 +95,6 @@ uint8_t u8x8_byte_sw_i2c_my(u8x8_t *u8x8, uint8_t msg, uint8_t arg_int, void *ar
   static uint8_t buffer[32];		/* u8g2/u8x8 will never send more than 32 bytes between START_TRANSFER and END_TRANSFER */
   static uint8_t buf_idx;
   uint8_t *data;
-  uint8_t test_data[2] = { 0x05, 0x02 };
 
   switch(msg)
   {
@@ -118,37 +117,16 @@ uint8_t u8x8_byte_sw_i2c_my(u8x8_t *u8x8, uint8_t msg, uint8_t arg_int, void *ar
       buf_idx = 0;
       break;
     case U8X8_MSG_BYTE_END_TRANSFER:
-//      i2c_transfer(u8x8_GetI2CAddress(u8x8) >> 1, buf_idx, buffer);
-
-
-    test_data[1] = HAL_I2C_Master_Transmit(&hi2c1,
-//    		  uint16_t DevAddress,
-//    		  u8x8_GetI2CAddress(u8x8) >> 1,
-    		  0x3c<<1,
-
-//			  uint8_t *pData,
-			  buffer,
-//			  uint16_t Size,
-			  buf_idx,
-//			  uint32_t Timeout);
-      	  	  50);
-    test_data[0] = u8x8_GetI2CAddress(u8x8);
-	HAL_UART_Transmit(&huart1, test_data, 2, 50);
-
-//    test_data[1] = HAL_I2C_Master_Transmit(&hi2c1,
-////    		  uint16_t DevAddress,
-////    		  u8x8_GetI2CAddress(u8x8) >> 1,
-//    		  0x3c,
-//
-////			  uint8_t *pData,
-//			  buffer,
-////			  uint16_t Size,
-//			  buf_idx,
-////			  uint32_t Timeout);
-//      	  	  50);
-//    test_data[0] = u8x8_GetI2CAddress(u8x8);
-//	HAL_UART_Transmit(&huart1, test_data, 2, 50);
-
+    	HAL_I2C_Master_Transmit(&hi2c1,
+    		/* uint16_t DevAddress, */
+    		/* 0x3c<<1, correct address */
+    			u8x8_GetI2CAddress(u8x8),
+			/* uint8_t *pData, */
+				buffer,
+			/* uint16_t Size, */
+				buf_idx,
+			/* uint32_t Timeout); */
+				50);
       break;
     default:
       return 0;
