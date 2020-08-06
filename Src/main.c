@@ -24,12 +24,14 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "u8g2.h"
+#include "screens.h"
 
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN PTD */
-
+#define WELDING_TIMEOUT_MAX 2000
+#define WELDING_TIMEOUT_MIN 100
 /* USER CODE END PTD */
 
 /* Private define ------------------------------------------------------------*/
@@ -46,11 +48,19 @@
 I2C_HandleTypeDef hi2c1;
 
 TIM_HandleTypeDef htim1;
+TIM_HandleTypeDef htim3;
 
 UART_HandleTypeDef huart1;
 
 /* USER CODE BEGIN PV */
+volatile uint8_t  timer_updated_flag = 0;
+volatile uint16_t timer_value = 0;
+volatile uint16_t timer_value_shadow = 0;
+volatile uint16_t welding_timeout = 500;
+
+
 static u8g2_t u8g2;
+struct screen_data_holder test_struct_holder;
 
 /* USER CODE END PV */
 
@@ -59,14 +69,45 @@ void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
 static void MX_TIM1_Init(void);
 static void MX_I2C1_Init(void);
+static void MX_TIM3_Init(void);
 static void MX_USART1_UART_Init(void);
 /* USER CODE BEGIN PFP */
+
+
+int8_t test_screen_function(uint16_t reg_addr);
+int8_t render_time_value(uint16_t reg_addr);
+
 
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 
+int8_t test_screen_function(uint16_t reg_addr) {
+//	  char string[] = "test";
+//		HAL_UART_Transmit(&huart1, string, 4, 50);
+//		HAL_UART_Transmit(&huart1, &reg_addr, 1, 50);
+//	  	HAL_UART_Transmit(&huart1, " ", 1, 50);
+
+		u8g2_SetFont(&u8g2, u8g2_font_ncenB14_tr);
+		u8g2_DrawStr(&u8g2, 1, 20, "Time ");
+		u8g2_DrawStr(&u8g2, 120, 20, "s");
+
+	  	return 0;
+};
+
+int8_t render_time_value(uint16_t value) {
+		uint16_t thouthands = value/1000;
+		uint16_t leftover = value%1000;
+
+
+		char str[10];
+		sprintf (str, "%d.%d", thouthands, leftover);
+		u8g2_SetFont(&u8g2, u8g2_font_ncenB14_tr);
+		u8g2_DrawStr(&u8g2, 55, 20, str);
+
+	  	return 0;
+};
 
 uint8_t u8x8_stm32_gpio_and_delay(U8X8_UNUSED u8x8_t *u8x8,
     U8X8_UNUSED uint8_t msg, U8X8_UNUSED uint8_t arg_int,
@@ -224,6 +265,12 @@ int main(void)
   HAL_Init();
 
   /* USER CODE BEGIN Init */
+//  test_struct_holder.screen_index = 1;
+  test_struct_holder.screen_renderer[0] = render_time_value;
+  test_struct_holder.screen_renderer[1] = test_screen_function;
+
+
+  //  test_struct_holder.screen_renderer = test_screen_function;
 
   /* USER CODE END Init */
 
@@ -238,8 +285,11 @@ int main(void)
   MX_GPIO_Init();
   MX_TIM1_Init();
   MX_I2C1_Init();
+  MX_TIM3_Init();
   MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
+
+  HAL_TIM_PWM_Start_IT(&htim3,TIM_CHANNEL_1);
 
   u8g2_Setup_ssd1306_i2c_128x32_univision_1(&u8g2,
 		  U8G2_R0,
@@ -253,8 +303,11 @@ int main(void)
 
   	do
 	{
-		u8g2_SetFont(&u8g2, u8g2_font_ncenB14_tr);
-		u8g2_DrawStr(&u8g2, 5, 20, "Hello world ");
+//		u8g2_SetFont(&u8g2, u8g2_font_ncenB14_tr);
+//		u8g2_DrawStr(&u8g2, 5, 20, "Hello world ");
+
+		test_struct_holder.screen_renderer[0](welding_timeout);
+  		test_struct_holder.screen_renderer[1](0x00);
 	} while (u8g2_NextPage(&u8g2));
 
 
@@ -286,7 +339,8 @@ int main(void)
 // 	  }
 // 	}
 
-
+  		uint8_t test_data[2] = { 0x05, 0x02 };
+  		HAL_UART_Transmit(&huart1, test_data, 2, 50);
 
   /* USER CODE END 2 */
 
@@ -297,10 +351,40 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-	HAL_GPIO_WritePin(GPIOA, TEST_LED_Pin, GPIO_PIN_SET);
-	HAL_Delay(1500);
-	HAL_GPIO_WritePin(GPIOA, TEST_LED_Pin, GPIO_PIN_RESET);
-	HAL_Delay(1500);
+
+	  if (timer_updated_flag == 1) {
+		  timer_updated_flag = 0;
+
+		  if (timer_value_shadow < timer_value) {
+			  welding_timeout += 50;
+			  if (welding_timeout > WELDING_TIMEOUT_MAX) {
+				  welding_timeout = WELDING_TIMEOUT_MAX;
+			  }
+		  } else {
+			  welding_timeout -= 50;
+			  if (welding_timeout < WELDING_TIMEOUT_MIN) {
+				  welding_timeout = WELDING_TIMEOUT_MIN;
+			  }
+		  }
+		  timer_value_shadow = timer_value;
+
+//			uint8_t test_data[2] = { (uint8_t)(timer_value >> 8), (uint8_t)(timer_value & 0x00ff) };
+		  u8g2_FirstPage(&u8g2);
+			do
+			{
+				test_struct_holder.screen_renderer[0](welding_timeout);
+				test_struct_holder.screen_renderer[1](0);
+			} while (u8g2_NextPage(&u8g2));
+
+		 	char str[10];
+			sprintf (str, "%d \r\n", timer_value);
+			HAL_UART_Transmit(&huart1, str, 10, 50);
+	  }
+
+//	HAL_GPIO_WritePin(GPIOA, TEST_LED_Pin, GPIO_PIN_SET);
+//	HAL_Delay(1500);
+//	HAL_GPIO_WritePin(GPIOA, TEST_LED_Pin, GPIO_PIN_RESET);
+//	HAL_Delay(1500);
 //	display_update();
 //	uint8_t test_data[2] = { 0x05, 0x02 };
 //	HAL_UART_Transmit(&huart1, test_data, 2, 50);
@@ -439,6 +523,55 @@ static void MX_TIM1_Init(void)
   /* USER CODE BEGIN TIM1_Init 2 */
 
   /* USER CODE END TIM1_Init 2 */
+
+}
+
+/**
+  * @brief TIM3 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_TIM3_Init(void)
+{
+
+  /* USER CODE BEGIN TIM3_Init 0 */
+
+  /* USER CODE END TIM3_Init 0 */
+
+  TIM_Encoder_InitTypeDef sConfig = {0};
+  TIM_MasterConfigTypeDef sMasterConfig = {0};
+
+  /* USER CODE BEGIN TIM3_Init 1 */
+
+  /* USER CODE END TIM3_Init 1 */
+  htim3.Instance = TIM3;
+  htim3.Init.Prescaler = 0;
+  htim3.Init.CounterMode = TIM_COUNTERMODE_UP;
+  htim3.Init.Period = 65535;
+  htim3.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
+  htim3.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
+  sConfig.EncoderMode = TIM_ENCODERMODE_TI1;
+  sConfig.IC1Polarity = TIM_ICPOLARITY_RISING;
+  sConfig.IC1Selection = TIM_ICSELECTION_DIRECTTI;
+  sConfig.IC1Prescaler = TIM_ICPSC_DIV1;
+  sConfig.IC1Filter = 0;
+  sConfig.IC2Polarity = TIM_ICPOLARITY_RISING;
+  sConfig.IC2Selection = TIM_ICSELECTION_DIRECTTI;
+  sConfig.IC2Prescaler = TIM_ICPSC_DIV1;
+  sConfig.IC2Filter = 0;
+  if (HAL_TIM_Encoder_Init(&htim3, &sConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
+  sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
+  if (HAL_TIMEx_MasterConfigSynchronization(&htim3, &sMasterConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN TIM3_Init 2 */
+
+  /* USER CODE END TIM3_Init 2 */
 
 }
 
