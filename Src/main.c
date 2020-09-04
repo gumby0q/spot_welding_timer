@@ -30,12 +30,17 @@
 
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN PTD */
-#define WELDING_TIMEOUT_MAX 2000
-#define WELDING_TIMEOUT_MIN 100
+
 /* USER CODE END PTD */
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
+#define WELDING_TIMEOUT_MAX 2000
+#define WELDING_TIMEOUT_MIN 100
+#define ENCODER_DEBUONCE_TIMEOUT 100
+
+#define BUTTON_DEBOUNCE_TIMEOUT_PRESS 30
+#define BUTTON_DEBOUNCE_TIMEOUT_RELEASE 100
 
 /* USER CODE END PD */
 
@@ -53,10 +58,19 @@ TIM_HandleTypeDef htim3;
 UART_HandleTypeDef huart1;
 
 /* USER CODE BEGIN PV */
+volatile uint8_t  encoderDebounceCounter = 0;
 volatile uint8_t  timer_updated_flag = 0;
 volatile uint16_t timer_value = 0;
 volatile uint16_t timer_value_shadow = 0;
 volatile uint16_t welding_timeout = 500;
+volatile uint16_t welding_timeout_counter = 0;
+
+
+volatile uint16_t welding_timeout_countdown_counter = 0;
+
+volatile uint16_t button_debounce_timeout_counter = 500;
+volatile uint8_t button_debouncing_flag = 0;
+volatile uint8_t button_pressed_flag = 0;
 
 
 static u8g2_t u8g2;
@@ -102,7 +116,7 @@ int8_t render_time_value(uint16_t value) {
 
 
 		char str[10];
-		sprintf (str, "%d.%d", thouthands, leftover);
+		sprintf (str, "%d.%03d", thouthands, leftover);
 		u8g2_SetFont(&u8g2, u8g2_font_ncenB14_tr);
 		u8g2_DrawStr(&u8g2, 55, 20, str);
 
@@ -177,11 +191,6 @@ uint8_t u8x8_byte_sw_i2c_my(u8x8_t *u8x8, uint8_t msg, uint8_t arg_int, void *ar
 
 
 void display_update(void) {
-
-//	int16_t tempInt;
-//	uint32_t tempUInt;
-//	int16_t tempDec;
-
 	u8g2_SetFont(&u8g2, u8g2_font_logisoso18_tr );
 
 	char tmp_string[100];
@@ -190,59 +199,6 @@ void display_update(void) {
 	 {
 		sprintf(tmp_string, "B xxx");
 		u8g2_DrawStr(&u8g2, 0, 10, tmp_string);
-
-//		////// boiler temp
-//		if(input_packet_boiler_timeout == DATA_WAIT_TIMEOUT){
-//			sprintf(tmp_string, "B xxx");
-//		}else{
-////			tempInt = (int16_t)(input_packet_boiler_temperature);
-////			tempDec = (uint16_t)(input_packet_boiler_temperature%1);
-//			sprintf(tmp_string, "B %.2f", input_packet_boiler_temperature);
-//		}
-//		u8g2_DrawStr(&u8g2, 0, 20, tmp_string);
-//
-//		//////t1
-//		if(temperature1timeout == DATA_WAIT_TIMEOUT){
-//			sprintf(tmp_string, "T xxx");
-//		}else{
-//			tempInt = (int16_t)(temperature/100);
-//			tempDec = (uint16_t)(temperature%100);
-//			sprintf(tmp_string, "T %d,%u", tempInt, tempDec);
-//		}
-//		u8g2_DrawStr(&u8g2, 0, 45, tmp_string);
-//
-//
-//		//////h1
-//		if(humidity1timeout == DATA_WAIT_TIMEOUT){
-//			sprintf(tmp_string, "H xxx");
-//		}else{
-//			tempUInt = (uint32_t)(humidity/1024);
-//			tempDec = (uint16_t)(humidity%1024);
-//			sprintf(tmp_string, "H %lu,%u", tempUInt, tempDec);
-//			printf(tmp_string);
-//		}
-//		u8g2_DrawStr(&u8g2, 0, 70, tmp_string);
-//
-//
-//		//////t2
-//		if(temperature2timeout == DATA_WAIT_TIMEOUT){
-//			sprintf(tmp_string, "T xxx");
-//		}else{
-//			tempInt = (int16_t)(temperature/100);
-//			tempDec = (uint16_t)(temperature%100);
-//			sprintf(tmp_string, "T %u,%u", tempInt, tempDec);
-//		}
-//		u8g2_DrawStr(&u8g2, 0, 100, tmp_string);
-//
-//
-//		//////h2
-//		if(humidity2timeout == DATA_WAIT_TIMEOUT){
-//			sprintf(tmp_string, "H xxx");
-//		}else{
-//			tempUInt = (uint32_t)(humidity/1024);
-//			tempDec = (uint16_t)(humidity%1024);
-//		}
-//		u8g2_DrawStr(&u8g2, 0, 125, tmp_string);
 
 	 } while (u8g2_NextPage(&u8g2));
 }
@@ -289,7 +245,11 @@ int main(void)
   MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
 
-  HAL_TIM_PWM_Start_IT(&htim3,TIM_CHANNEL_1);
+//  HAL_TIM_PWM_Start_IT(&htim3, TIM_CHANNEL_1);
+  HAL_TIM_Encoder_Start_IT(&htim3, TIM_CHANNEL_1);
+
+  HAL_TIM_Base_Start_IT(&htim1);
+
 
   u8g2_Setup_ssd1306_i2c_128x32_univision_1(&u8g2,
 		  U8G2_R0,
@@ -339,8 +299,6 @@ int main(void)
 // 	  }
 // 	}
 
-  		uint8_t test_data[2] = { 0x05, 0x02 };
-  		HAL_UART_Transmit(&huart1, test_data, 2, 50);
 
   /* USER CODE END 2 */
 
@@ -352,33 +310,107 @@ int main(void)
 
     /* USER CODE BEGIN 3 */
 
+//	  button_pressed_flag
+//	  button_debounce_timeout_counter
+//	  BUTTON_DEBOUNCE_TIMEOUT
+
+	if (button_pressed_flag == 0) {
+		if (button_debouncing_flag == 0) {
+			/* if pressed */
+			if ( ! HAL_GPIO_ReadPin(GPIOA, BUTTON_Pin)) {
+				button_debouncing_flag = 1;
+				button_debounce_timeout_counter = BUTTON_DEBOUNCE_TIMEOUT_PRESS;
+			}
+		} else {
+			if (! HAL_GPIO_ReadPin(GPIOA, BUTTON_Pin)) {
+				if (button_debounce_timeout_counter == 0) {
+					button_debouncing_flag = 0;
+					button_pressed_flag = 1;
+					/* pressed action here */
+
+
+					HAL_GPIO_WritePin(GPIOA, TEST_LED_Pin | TRIAC_CONTROL_Pin, GPIO_PIN_SET);
+					HAL_Delay(75);
+					HAL_GPIO_WritePin(GPIOA, TEST_LED_Pin | TRIAC_CONTROL_Pin, GPIO_PIN_RESET);
+					HAL_Delay(50);
+
+					welding_timeout_counter = welding_timeout;
+					HAL_GPIO_WritePin(GPIOA, TEST_LED_Pin | TRIAC_CONTROL_Pin, GPIO_PIN_SET);
+
+//					char str1[10];
+//					sprintf (str1, "press \r\n");
+//					HAL_UART_Transmit(&huart1, (uint8_t*)str1, 10, 50);
+				}
+
+			/* if not pressed but debounce time still running*/
+			} else {
+				button_debouncing_flag = 0;
+				button_pressed_flag = 0;
+			}
+		}
+	} else {
+		if (button_debouncing_flag == 0) {
+			/* if not pressed */
+			if (HAL_GPIO_ReadPin(GPIOA, BUTTON_Pin)) { /* change */
+				button_debouncing_flag = 1;
+				button_debounce_timeout_counter = BUTTON_DEBOUNCE_TIMEOUT_RELEASE;
+			}
+		} else {
+			if (HAL_GPIO_ReadPin(GPIOA, BUTTON_Pin)) { /* change */
+				if (button_debounce_timeout_counter == 0) {
+					button_debouncing_flag = 0;
+					button_pressed_flag = 0; /* change */
+					/* released action here */
+//					char str1[10];
+//					sprintf (str1, "release \r\n");
+//					HAL_UART_Transmit(&huart1, (uint8_t*)str1, 10, 50);
+				}
+			} else {
+				button_debouncing_flag = 0;
+				button_pressed_flag = 1; /* change */
+			}
+		}
+	}
+
+
+
+
+
 	  if (timer_updated_flag == 1) {
 		  timer_updated_flag = 0;
 
-		  if (timer_value_shadow < timer_value) {
-			  welding_timeout += 50;
-			  if (welding_timeout > WELDING_TIMEOUT_MAX) {
-				  welding_timeout = WELDING_TIMEOUT_MAX;
+		  if (encoderDebounceCounter == 0) {
+			  encoderDebounceCounter = ENCODER_DEBUONCE_TIMEOUT;
+
+			  /* timer incrementing value >> */
+			  if (timer_value_shadow < timer_value) {
+				  welding_timeout += 50;
+				  if (welding_timeout > WELDING_TIMEOUT_MAX) {
+					  welding_timeout = WELDING_TIMEOUT_MAX;
+				  }
+			  } else {
+				  welding_timeout -= 50;
+				  if (welding_timeout < WELDING_TIMEOUT_MIN) {
+					  welding_timeout = WELDING_TIMEOUT_MIN;
+				  }
 			  }
-		  } else {
-			  welding_timeout -= 50;
-			  if (welding_timeout < WELDING_TIMEOUT_MIN) {
-				  welding_timeout = WELDING_TIMEOUT_MIN;
-			  }
+			  timer_value_shadow = timer_value;
+			  /* timer incrementing value << */
 		  }
-		  timer_value_shadow = timer_value;
+
+
 
 //			uint8_t test_data[2] = { (uint8_t)(timer_value >> 8), (uint8_t)(timer_value & 0x00ff) };
-		  u8g2_FirstPage(&u8g2);
+			u8g2_FirstPage(&u8g2);
 			do
 			{
 				test_struct_holder.screen_renderer[0](welding_timeout);
 				test_struct_holder.screen_renderer[1](0);
 			} while (u8g2_NextPage(&u8g2));
 
-		 	char str[10];
+			char str[10];
 			sprintf (str, "%d \r\n", timer_value);
-			HAL_UART_Transmit(&huart1, str, 10, 50);
+			HAL_UART_Transmit(&huart1, (uint8_t*)str, 10, 50);
 	  }
 
 //	HAL_GPIO_WritePin(GPIOA, TEST_LED_Pin, GPIO_PIN_SET);
@@ -499,7 +531,7 @@ static void MX_TIM1_Init(void)
   /* USER CODE END TIM1_Init 1 */
   htim1.Instance = TIM1;
   htim1.Init.Prescaler = 8;
-  htim1.Init.CounterMode = TIM_COUNTERMODE_UP;
+  htim1.Init.CounterMode = TIM_COUNTERMODE_DOWN;
   htim1.Init.Period = 1000;
   htim1.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   htim1.Init.RepetitionCounter = 0;

@@ -1,8 +1,8 @@
-main.c:86:8:test_screen_function	8	static
-main.c:99:8:render_time_value	32	static
-main.c:112:9:u8x8_stm32_gpio_and_delay	8	static
-main.c:134:9:u8x8_byte_sw_i2c_my	32	static
-main.c:179:6:display_update	112	static
-main.c:399:6:SystemClock_Config	88	static
-main.c:255:5:main	80	static
-main.c:651:6:Error_Handler	0	static
+main.c:100:8:test_screen_function	8	static
+main.c:113:8:render_time_value	32	static
+main.c:126:9:u8x8_stm32_gpio_and_delay	8	static
+main.c:148:9:u8x8_byte_sw_i2c_my	32	static
+main.c:193:6:display_update	112	static
+main.c:431:6:SystemClock_Config	88	static
+main.c:211:5:main	80	static
+main.c:683:6:Error_Handler	0	static

@@ -42,8 +42,13 @@
 
 /* Private variables ---------------------------------------------------------*/
 /* USER CODE BEGIN PV */
+extern volatile uint8_t  encoderDebounceCounter;
 extern volatile uint8_t  timer_updated_flag;
 extern volatile uint16_t timer_value;
+
+extern volatile uint16_t welding_timeout_counter;
+
+extern volatile uint16_t button_debounce_timeout_counter;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -127,6 +132,21 @@ void SysTick_Handler(void)
 {
   /* USER CODE BEGIN SysTick_IRQn 0 */
 
+
+	if (encoderDebounceCounter > 1) {
+		encoderDebounceCounter--;
+	} else {
+		encoderDebounceCounter = 0;
+	}
+
+
+	if (button_debounce_timeout_counter > 1) {
+		button_debounce_timeout_counter--;
+	} else {
+		button_debounce_timeout_counter = 0;
+	}
+
+
   /* USER CODE END SysTick_IRQn 0 */
   HAL_IncTick();
   /* USER CODE BEGIN SysTick_IRQn 1 */
@@ -147,6 +167,14 @@ void SysTick_Handler(void)
 void TIM1_BRK_UP_TRG_COM_IRQHandler(void)
 {
   /* USER CODE BEGIN TIM1_BRK_UP_TRG_COM_IRQn 0 */
+
+	if (welding_timeout_counter >= 1) {
+		welding_timeout_counter--;
+
+		if (welding_timeout_counter == 0) {
+			HAL_GPIO_WritePin(GPIOA, TEST_LED_Pin | TRIAC_CONTROL_Pin, GPIO_PIN_RESET);
+		}
+	}
 
   /* USER CODE END TIM1_BRK_UP_TRG_COM_IRQn 0 */
   HAL_TIM_IRQHandler(&htim1);
