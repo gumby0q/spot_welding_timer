@@ -8982,7 +8982,7 @@ LOAD /opt/Atollic_TrueSTUDIO_for_STM32_x86_64_9.3.0/ARMTools/bin/../lib/gcc/arm-
                 0x0000000008000000                g_pfnVectors
                 0x00000000080000c0                . = ALIGN (0x4)
 
-.text           0x00000000080000c0     0x3508
+.text           0x00000000080000c0     0x3518
                 0x00000000080000c0                . = ALIGN (0x4)
  *(.text)
  .text          0x00000000080000c0       0x48 /opt/Atollic_TrueSTUDIO_for_STM32_x86_64_9.3.0/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/armv6-m/crtbegin.o
@@ -9156,421 +9156,421 @@ LOAD /opt/Atollic_TrueSTUDIO_for_STM32_x86_64_9.3.0/ARMTools/bin/../lib/gcc/arm-
                 0x0000000008001884                SystemClock_Config
  *fill*         0x00000000080018de        0x2 
  .text.startup.main
-                0x00000000080018e0      0x364 Src/main.o
+                0x00000000080018e0      0x374 Src/main.o
                 0x00000000080018e0                main
  .text.HAL_MspInit
-                0x0000000008001c44       0x30 Src/stm32f0xx_hal_msp.o
-                0x0000000008001c44                HAL_MspInit
+                0x0000000008001c54       0x30 Src/stm32f0xx_hal_msp.o
+                0x0000000008001c54                HAL_MspInit
  .text.HAL_I2C_MspInit
-                0x0000000008001c74       0x6c Src/stm32f0xx_hal_msp.o
-                0x0000000008001c74                HAL_I2C_MspInit
+                0x0000000008001c84       0x6c Src/stm32f0xx_hal_msp.o
+                0x0000000008001c84                HAL_I2C_MspInit
  .text.HAL_TIM_Base_MspInit
-                0x0000000008001ce0       0x38 Src/stm32f0xx_hal_msp.o
-                0x0000000008001ce0                HAL_TIM_Base_MspInit
+                0x0000000008001cf0       0x38 Src/stm32f0xx_hal_msp.o
+                0x0000000008001cf0                HAL_TIM_Base_MspInit
  .text.HAL_TIM_Encoder_MspInit
-                0x0000000008001d18       0x70 Src/stm32f0xx_hal_msp.o
-                0x0000000008001d18                HAL_TIM_Encoder_MspInit
+                0x0000000008001d28       0x70 Src/stm32f0xx_hal_msp.o
+                0x0000000008001d28                HAL_TIM_Encoder_MspInit
  .text.HAL_UART_MspInit
-                0x0000000008001d88       0x64 Src/stm32f0xx_hal_msp.o
-                0x0000000008001d88                HAL_UART_MspInit
+                0x0000000008001d98       0x64 Src/stm32f0xx_hal_msp.o
+                0x0000000008001d98                HAL_UART_MspInit
  .text.NMI_Handler
-                0x0000000008001dec        0x2 Src/stm32f0xx_it.o
-                0x0000000008001dec                NMI_Handler
+                0x0000000008001dfc        0x2 Src/stm32f0xx_it.o
+                0x0000000008001dfc                NMI_Handler
  .text.HardFault_Handler
-                0x0000000008001dee        0x2 Src/stm32f0xx_it.o
-                0x0000000008001dee                HardFault_Handler
+                0x0000000008001dfe        0x2 Src/stm32f0xx_it.o
+                0x0000000008001dfe                HardFault_Handler
  .text.SVC_Handler
-                0x0000000008001df0        0x2 Src/stm32f0xx_it.o
-                0x0000000008001df0                SVC_Handler
+                0x0000000008001e00        0x2 Src/stm32f0xx_it.o
+                0x0000000008001e00                SVC_Handler
  .text.PendSV_Handler
-                0x0000000008001df2        0x2 Src/stm32f0xx_it.o
-                0x0000000008001df2                PendSV_Handler
+                0x0000000008001e02        0x2 Src/stm32f0xx_it.o
+                0x0000000008001e02                PendSV_Handler
  .text.SysTick_Handler
-                0x0000000008001df4       0x38 Src/stm32f0xx_it.o
-                0x0000000008001df4                SysTick_Handler
+                0x0000000008001e04       0x38 Src/stm32f0xx_it.o
+                0x0000000008001e04                SysTick_Handler
  .text.TIM1_BRK_UP_TRG_COM_IRQHandler
-                0x0000000008001e2c       0x34 Src/stm32f0xx_it.o
-                0x0000000008001e2c                TIM1_BRK_UP_TRG_COM_IRQHandler
+                0x0000000008001e3c       0x34 Src/stm32f0xx_it.o
+                0x0000000008001e3c                TIM1_BRK_UP_TRG_COM_IRQHandler
  .text.TIM3_IRQHandler
-                0x0000000008001e60       0x28 Src/stm32f0xx_it.o
-                0x0000000008001e60                TIM3_IRQHandler
- .text._sbrk    0x0000000008001e88       0x34 Src/syscalls.o
-                0x0000000008001e88                _sbrk
+                0x0000000008001e70       0x28 Src/stm32f0xx_it.o
+                0x0000000008001e70                TIM3_IRQHandler
+ .text._sbrk    0x0000000008001e98       0x34 Src/syscalls.o
+                0x0000000008001e98                _sbrk
  .text.SystemInit
-                0x0000000008001ebc       0x60 Src/system_stm32f0xx.o
-                0x0000000008001ebc                SystemInit
+                0x0000000008001ecc       0x60 Src/system_stm32f0xx.o
+                0x0000000008001ecc                SystemInit
  .text.u8g2_send_buffer
-                0x0000000008001f1c       0x56 Src/u8g2_buffer.o
+                0x0000000008001f2c       0x56 Src/u8g2_buffer.o
  .text.u8g2_ClearBuffer
-                0x0000000008001f72       0x1a Src/u8g2_buffer.o
-                0x0000000008001f72                u8g2_ClearBuffer
+                0x0000000008001f82       0x1a Src/u8g2_buffer.o
+                0x0000000008001f82                u8g2_ClearBuffer
  .text.u8g2_SetBufferCurrTileRow
-                0x0000000008001f8c       0x1a Src/u8g2_buffer.o
-                0x0000000008001f8c                u8g2_SetBufferCurrTileRow
+                0x0000000008001f9c       0x1a Src/u8g2_buffer.o
+                0x0000000008001f9c                u8g2_SetBufferCurrTileRow
  .text.u8g2_FirstPage
-                0x0000000008001fa6       0x1c Src/u8g2_buffer.o
-                0x0000000008001fa6                u8g2_FirstPage
+                0x0000000008001fb6       0x1c Src/u8g2_buffer.o
+                0x0000000008001fb6                u8g2_FirstPage
  .text.u8g2_NextPage
-                0x0000000008001fc2       0x44 Src/u8g2_buffer.o
-                0x0000000008001fc2                u8g2_NextPage
- *fill*         0x0000000008002006        0x2 
+                0x0000000008001fd2       0x44 Src/u8g2_buffer.o
+                0x0000000008001fd2                u8g2_NextPage
+ *fill*         0x0000000008002016        0x2 
  .text.u8g2_m_16_4_1
-                0x0000000008002008        0xc Src/u8g2_d_memory.o
-                0x0000000008002008                u8g2_m_16_4_1
+                0x0000000008002018        0xc Src/u8g2_d_memory.o
+                0x0000000008002018                u8g2_m_16_4_1
  .text.u8g2_Setup_ssd1306_i2c_128x32_univision_1
-                0x0000000008002014       0x38 Src/u8g2_d_setup.o
-                0x0000000008002014                u8g2_Setup_ssd1306_i2c_128x32_univision_1
+                0x0000000008002024       0x38 Src/u8g2_d_setup.o
+                0x0000000008002024                u8g2_Setup_ssd1306_i2c_128x32_univision_1
  .text.u8g2_font_get_word
-                0x000000000800204c        0xe Src/u8g2_font.o
+                0x000000000800205c        0xe Src/u8g2_font.o
  .text.u8g2_add_vector_y
-                0x000000000800205a       0x22 Src/u8g2_font.o
+                0x000000000800206a       0x22 Src/u8g2_font.o
  .text.u8g2_add_vector_x
-                0x000000000800207c       0x22 Src/u8g2_font.o
+                0x000000000800208c       0x22 Src/u8g2_font.o
  .text.u8g2_font_calc_vref_font
-                0x000000000800209e        0x4 Src/u8g2_font.o
-                0x000000000800209e                u8g2_font_calc_vref_font
+                0x00000000080020ae        0x4 Src/u8g2_font.o
+                0x00000000080020ae                u8g2_font_calc_vref_font
  .text.u8g2_read_font_info
-                0x00000000080020a2       0x6a Src/u8g2_font.o
-                0x00000000080020a2                u8g2_read_font_info
+                0x00000000080020b2       0x6a Src/u8g2_font.o
+                0x00000000080020b2                u8g2_read_font_info
  .text.u8g2_font_decode_get_unsigned_bits
-                0x000000000800210c       0x36 Src/u8g2_font.o
-                0x000000000800210c                u8g2_font_decode_get_unsigned_bits
+                0x000000000800211c       0x36 Src/u8g2_font.o
+                0x000000000800211c                u8g2_font_decode_get_unsigned_bits
  .text.u8g2_font_setup_decode
-                0x0000000008002142       0x38 Src/u8g2_font.o
+                0x0000000008002152       0x38 Src/u8g2_font.o
  .text.u8g2_font_decode_get_signed_bits
-                0x000000000800217a       0x16 Src/u8g2_font.o
-                0x000000000800217a                u8g2_font_decode_get_signed_bits
+                0x000000000800218a       0x16 Src/u8g2_font.o
+                0x000000000800218a                u8g2_font_decode_get_signed_bits
  .text.u8g2_font_decode_len
-                0x0000000008002190       0xb2 Src/u8g2_font.o
-                0x0000000008002190                u8g2_font_decode_len
+                0x00000000080021a0       0xb2 Src/u8g2_font.o
+                0x00000000080021a0                u8g2_font_decode_len
  .text.u8g2_font_decode_glyph
-                0x0000000008002242      0x154 Src/u8g2_font.o
-                0x0000000008002242                u8g2_font_decode_glyph
+                0x0000000008002252      0x154 Src/u8g2_font.o
+                0x0000000008002252                u8g2_font_decode_glyph
  .text.u8g2_font_get_glyph_data
-                0x0000000008002396       0x6c Src/u8g2_font.o
-                0x0000000008002396                u8g2_font_get_glyph_data
+                0x00000000080023a6       0x6c Src/u8g2_font.o
+                0x00000000080023a6                u8g2_font_get_glyph_data
  .text.u8g2_DrawGlyph
-                0x0000000008002402       0x5e Src/u8g2_font.o
-                0x0000000008002402                u8g2_DrawGlyph
+                0x0000000008002412       0x5e Src/u8g2_font.o
+                0x0000000008002412                u8g2_DrawGlyph
  .text.u8g2_draw_string
-                0x0000000008002460       0x70 Src/u8g2_font.o
+                0x0000000008002470       0x70 Src/u8g2_font.o
  .text.u8g2_DrawStr
-                0x00000000080024d0       0x10 Src/u8g2_font.o
-                0x00000000080024d0                u8g2_DrawStr
+                0x00000000080024e0       0x10 Src/u8g2_font.o
+                0x00000000080024e0                u8g2_DrawStr
  .text.u8g2_UpdateRefHeight
-                0x00000000080024e0       0x62 Src/u8g2_font.o
-                0x00000000080024e0                u8g2_UpdateRefHeight
- *fill*         0x0000000008002542        0x2 
+                0x00000000080024f0       0x62 Src/u8g2_font.o
+                0x00000000080024f0                u8g2_UpdateRefHeight
+ *fill*         0x0000000008002552        0x2 
  .text.u8g2_SetFontPosBaseline
-                0x0000000008002544        0xc Src/u8g2_font.o
-                0x0000000008002544                u8g2_SetFontPosBaseline
+                0x0000000008002554        0xc Src/u8g2_font.o
+                0x0000000008002554                u8g2_SetFontPosBaseline
  .text.u8g2_SetFont
-                0x0000000008002550       0x1a Src/u8g2_font.o
-                0x0000000008002550                u8g2_SetFont
+                0x0000000008002560       0x1a Src/u8g2_font.o
+                0x0000000008002560                u8g2_SetFont
  .text.u8g2_draw_hv_line_2dir
-                0x000000000800256a       0x18 Src/u8g2_hvline.o
-                0x000000000800256a                u8g2_draw_hv_line_2dir
+                0x000000000800257a       0x18 Src/u8g2_hvline.o
+                0x000000000800257a                u8g2_draw_hv_line_2dir
  .text.u8g2_DrawHVLine
-                0x0000000008002582       0xe0 Src/u8g2_hvline.o
-                0x0000000008002582                u8g2_DrawHVLine
+                0x0000000008002592       0xe0 Src/u8g2_hvline.o
+                0x0000000008002592                u8g2_DrawHVLine
  .text.u8g2_is_intersection_decision_tree
-                0x0000000008002662       0x1e Src/u8g2_intersection.o
-                0x0000000008002662                u8g2_is_intersection_decision_tree
+                0x0000000008002672       0x1e Src/u8g2_intersection.o
+                0x0000000008002672                u8g2_is_intersection_decision_tree
  .text.u8g2_IsIntersection
-                0x0000000008002680       0x32 Src/u8g2_intersection.o
-                0x0000000008002680                u8g2_IsIntersection
+                0x0000000008002690       0x32 Src/u8g2_intersection.o
+                0x0000000008002690                u8g2_IsIntersection
  .text.u8g2_ll_hvline_vertical_top_lsb
-                0x00000000080026b2       0x9e Src/u8g2_ll_hvline.o
-                0x00000000080026b2                u8g2_ll_hvline_vertical_top_lsb
+                0x00000000080026c2       0x9e Src/u8g2_ll_hvline.o
+                0x00000000080026c2                u8g2_ll_hvline_vertical_top_lsb
  .text.u8g2_update_dimension_common
-                0x0000000008002750       0x64 Src/u8g2_setup.o
+                0x0000000008002760       0x64 Src/u8g2_setup.o
  .text.u8g2_draw_l90_r0
-                0x00000000080027b4        0xe Src/u8g2_setup.o
-                0x00000000080027b4                u8g2_draw_l90_r0
+                0x00000000080027c4        0xe Src/u8g2_setup.o
+                0x00000000080027c4                u8g2_draw_l90_r0
  .text.u8g2_apply_clip_window
-                0x00000000080027c2       0x72 Src/u8g2_setup.o
+                0x00000000080027d2       0x72 Src/u8g2_setup.o
  .text.u8g2_update_page_win_r0
-                0x0000000008002834       0x28 Src/u8g2_setup.o
-                0x0000000008002834                u8g2_update_page_win_r0
+                0x0000000008002844       0x28 Src/u8g2_setup.o
+                0x0000000008002844                u8g2_update_page_win_r0
  .text.u8g2_update_dimension_r0
-                0x000000000800285c        0x8 Src/u8g2_setup.o
-                0x000000000800285c                u8g2_update_dimension_r0
+                0x000000000800286c        0x8 Src/u8g2_setup.o
+                0x000000000800286c                u8g2_update_dimension_r0
  .text.u8g2_SetMaxClipWindow
-                0x0000000008002864       0x1c Src/u8g2_setup.o
-                0x0000000008002864                u8g2_SetMaxClipWindow
+                0x0000000008002874       0x1c Src/u8g2_setup.o
+                0x0000000008002874                u8g2_SetMaxClipWindow
  .text.u8g2_SetupBuffer
-                0x0000000008002880       0x42 Src/u8g2_setup.o
-                0x0000000008002880                u8g2_SetupBuffer
- *fill*         0x00000000080028c2        0x2 
+                0x0000000008002890       0x42 Src/u8g2_setup.o
+                0x0000000008002890                u8g2_SetupBuffer
+ *fill*         0x00000000080028d2        0x2 
  .text.u8x8_ascii_next
-                0x00000000080028c4       0x14 Src/u8x8_8x8.o
-                0x00000000080028c4                u8x8_ascii_next
+                0x00000000080028d4       0x14 Src/u8x8_8x8.o
+                0x00000000080028d4                u8x8_ascii_next
  .text.u8x8_utf8_init
-                0x00000000080028d8        0x8 Src/u8x8_8x8.o
-                0x00000000080028d8                u8x8_utf8_init
+                0x00000000080028e8        0x8 Src/u8x8_8x8.o
+                0x00000000080028e8                u8x8_utf8_init
  .text.u8x8_byte_SendBytes
-                0x00000000080028e0        0xe Src/u8x8_byte.o
-                0x00000000080028e0                u8x8_byte_SendBytes
+                0x00000000080028f0        0xe Src/u8x8_byte.o
+                0x00000000080028f0                u8x8_byte_SendBytes
  .text.u8x8_byte_SendByte
-                0x00000000080028ee       0x10 Src/u8x8_byte.o
-                0x00000000080028ee                u8x8_byte_SendByte
+                0x00000000080028fe       0x10 Src/u8x8_byte.o
+                0x00000000080028fe                u8x8_byte_SendByte
  .text.u8x8_byte_StartTransfer
-                0x00000000080028fe        0xe Src/u8x8_byte.o
-                0x00000000080028fe                u8x8_byte_StartTransfer
+                0x000000000800290e        0xe Src/u8x8_byte.o
+                0x000000000800290e                u8x8_byte_StartTransfer
  .text.u8x8_byte_EndTransfer
-                0x000000000800290c        0xe Src/u8x8_byte.o
-                0x000000000800290c                u8x8_byte_EndTransfer
+                0x000000000800291c        0xe Src/u8x8_byte.o
+                0x000000000800291c                u8x8_byte_EndTransfer
  .text.u8x8_i2c_data_transfer
-                0x000000000800291a       0x28 Src/u8x8_cad.o
+                0x000000000800292a       0x28 Src/u8x8_cad.o
  .text.u8x8_cad_SendCmd
-                0x0000000008002942        0xe Src/u8x8_cad.o
-                0x0000000008002942                u8x8_cad_SendCmd
+                0x0000000008002952        0xe Src/u8x8_cad.o
+                0x0000000008002952                u8x8_cad_SendCmd
  .text.u8x8_cad_SendArg
-                0x0000000008002950        0xe Src/u8x8_cad.o
-                0x0000000008002950                u8x8_cad_SendArg
+                0x0000000008002960        0xe Src/u8x8_cad.o
+                0x0000000008002960                u8x8_cad_SendArg
  .text.u8x8_cad_SendData
-                0x000000000800295e        0xe Src/u8x8_cad.o
-                0x000000000800295e                u8x8_cad_SendData
+                0x000000000800296e        0xe Src/u8x8_cad.o
+                0x000000000800296e                u8x8_cad_SendData
  .text.u8x8_cad_StartTransfer
-                0x000000000800296c        0xe Src/u8x8_cad.o
-                0x000000000800296c                u8x8_cad_StartTransfer
+                0x000000000800297c        0xe Src/u8x8_cad.o
+                0x000000000800297c                u8x8_cad_StartTransfer
  .text.u8x8_cad_EndTransfer
-                0x000000000800297a        0xe Src/u8x8_cad.o
-                0x000000000800297a                u8x8_cad_EndTransfer
+                0x000000000800298a        0xe Src/u8x8_cad.o
+                0x000000000800298a                u8x8_cad_EndTransfer
  .text.u8x8_cad_SendSequence
-                0x0000000008002988       0x5e Src/u8x8_cad.o
-                0x0000000008002988                u8x8_cad_SendSequence
- *fill*         0x00000000080029e6        0x2 
+                0x0000000008002998       0x5e Src/u8x8_cad.o
+                0x0000000008002998                u8x8_cad_SendSequence
+ *fill*         0x00000000080029f6        0x2 
  .text.u8x8_cad_ssd13xx_fast_i2c
-                0x00000000080029e8       0xc0 Src/u8x8_cad.o
-                0x00000000080029e8                u8x8_cad_ssd13xx_fast_i2c
+                0x00000000080029f8       0xc0 Src/u8x8_cad.o
+                0x00000000080029f8                u8x8_cad_ssd13xx_fast_i2c
  .text.u8x8_d_ssd1306_128x32_generic
-                0x0000000008002aa8       0xdc Src/u8x8_d_ssd1306_128x32.o
+                0x0000000008002ab8       0xdc Src/u8x8_d_ssd1306_128x32.o
  .text.u8x8_d_ssd1306_128x32_univision
-                0x0000000008002b84       0x1c Src/u8x8_d_ssd1306_128x32.o
-                0x0000000008002b84                u8x8_d_ssd1306_128x32_univision
+                0x0000000008002b94       0x1c Src/u8x8_d_ssd1306_128x32.o
+                0x0000000008002b94                u8x8_d_ssd1306_128x32_univision
  .text.u8x8_d_helper_display_setup_memory
-                0x0000000008002ba0        0xa Src/u8x8_display.o
-                0x0000000008002ba0                u8x8_d_helper_display_setup_memory
+                0x0000000008002bb0        0xa Src/u8x8_display.o
+                0x0000000008002bb0                u8x8_d_helper_display_setup_memory
  .text.u8x8_d_helper_display_init
-                0x0000000008002baa       0x5e Src/u8x8_display.o
-                0x0000000008002baa                u8x8_d_helper_display_init
+                0x0000000008002bba       0x5e Src/u8x8_display.o
+                0x0000000008002bba                u8x8_d_helper_display_init
  .text.u8x8_DrawTile
-                0x0000000008002c08       0x1a Src/u8x8_display.o
-                0x0000000008002c08                u8x8_DrawTile
+                0x0000000008002c18       0x1a Src/u8x8_display.o
+                0x0000000008002c18                u8x8_DrawTile
  .text.u8x8_SetupMemory
-                0x0000000008002c22        0xe Src/u8x8_display.o
-                0x0000000008002c22                u8x8_SetupMemory
+                0x0000000008002c32        0xe Src/u8x8_display.o
+                0x0000000008002c32                u8x8_SetupMemory
  .text.u8x8_InitDisplay
-                0x0000000008002c30        0xe Src/u8x8_display.o
-                0x0000000008002c30                u8x8_InitDisplay
+                0x0000000008002c40        0xe Src/u8x8_display.o
+                0x0000000008002c40                u8x8_InitDisplay
  .text.u8x8_SetPowerSave
-                0x0000000008002c3e        0xe Src/u8x8_display.o
-                0x0000000008002c3e                u8x8_SetPowerSave
+                0x0000000008002c4e        0xe Src/u8x8_display.o
+                0x0000000008002c4e                u8x8_SetPowerSave
  .text.u8x8_RefreshDisplay
-                0x0000000008002c4c        0xe Src/u8x8_display.o
-                0x0000000008002c4c                u8x8_RefreshDisplay
+                0x0000000008002c5c        0xe Src/u8x8_display.o
+                0x0000000008002c5c                u8x8_RefreshDisplay
  .text.u8x8_gpio_call
-                0x0000000008002c5a        0xa Src/u8x8_gpio.o
-                0x0000000008002c5a                u8x8_gpio_call
+                0x0000000008002c6a        0xa Src/u8x8_gpio.o
+                0x0000000008002c6a                u8x8_gpio_call
  .text.u8x8_dummy_cb
-                0x0000000008002c64        0x4 Src/u8x8_setup.o
-                0x0000000008002c64                u8x8_dummy_cb
+                0x0000000008002c74        0x4 Src/u8x8_setup.o
+                0x0000000008002c74                u8x8_dummy_cb
  .text.u8x8_SetupDefaults
-                0x0000000008002c68       0x2c Src/u8x8_setup.o
-                0x0000000008002c68                u8x8_SetupDefaults
+                0x0000000008002c78       0x2c Src/u8x8_setup.o
+                0x0000000008002c78                u8x8_SetupDefaults
  .text.u8x8_Setup
-                0x0000000008002c94       0x20 Src/u8x8_setup.o
-                0x0000000008002c94                u8x8_Setup
+                0x0000000008002ca4       0x20 Src/u8x8_setup.o
+                0x0000000008002ca4                u8x8_Setup
  .text.Reset_Handler
-                0x0000000008002cb4       0x50 startup/startup_stm32f030x6.o
-                0x0000000008002cb4                Reset_Handler
+                0x0000000008002cc4       0x50 startup/startup_stm32f030x6.o
+                0x0000000008002cc4                Reset_Handler
  .text.Default_Handler
-                0x0000000008002d04        0x2 startup/startup_stm32f030x6.o
-                0x0000000008002d04                DMA1_Channel4_5_IRQHandler
-                0x0000000008002d04                ADC1_IRQHandler
-                0x0000000008002d04                SPI1_IRQHandler
-                0x0000000008002d04                TIM17_IRQHandler
-                0x0000000008002d04                EXTI4_15_IRQHandler
-                0x0000000008002d04                EXTI0_1_IRQHandler
-                0x0000000008002d04                WWDG_IRQHandler
-                0x0000000008002d04                RCC_IRQHandler
-                0x0000000008002d04                RTC_IRQHandler
-                0x0000000008002d04                I2C1_IRQHandler
-                0x0000000008002d04                TIM14_IRQHandler
-                0x0000000008002d04                FLASH_IRQHandler
-                0x0000000008002d04                EXTI2_3_IRQHandler
-                0x0000000008002d04                USART1_IRQHandler
-                0x0000000008002d04                Default_Handler
-                0x0000000008002d04                TIM16_IRQHandler
-                0x0000000008002d04                DMA1_Channel2_3_IRQHandler
-                0x0000000008002d04                TIM1_CC_IRQHandler
-                0x0000000008002d04                DMA1_Channel1_IRQHandler
- *fill*         0x0000000008002d06        0x2 
- .text.__errno  0x0000000008002d08        0xc /opt/Atollic_TrueSTUDIO_for_STM32_x86_64_9.3.0/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/../../../../arm-atollic-eabi/lib/armv6-m/libc_nano.a(lib_a-errno.o)
-                0x0000000008002d08                __errno
+                0x0000000008002d14        0x2 startup/startup_stm32f030x6.o
+                0x0000000008002d14                DMA1_Channel4_5_IRQHandler
+                0x0000000008002d14                ADC1_IRQHandler
+                0x0000000008002d14                SPI1_IRQHandler
+                0x0000000008002d14                TIM17_IRQHandler
+                0x0000000008002d14                EXTI4_15_IRQHandler
+                0x0000000008002d14                EXTI0_1_IRQHandler
+                0x0000000008002d14                WWDG_IRQHandler
+                0x0000000008002d14                RCC_IRQHandler
+                0x0000000008002d14                RTC_IRQHandler
+                0x0000000008002d14                I2C1_IRQHandler
+                0x0000000008002d14                TIM14_IRQHandler
+                0x0000000008002d14                FLASH_IRQHandler
+                0x0000000008002d14                EXTI2_3_IRQHandler
+                0x0000000008002d14                USART1_IRQHandler
+                0x0000000008002d14                Default_Handler
+                0x0000000008002d14                TIM16_IRQHandler
+                0x0000000008002d14                DMA1_Channel2_3_IRQHandler
+                0x0000000008002d14                TIM1_CC_IRQHandler
+                0x0000000008002d14                DMA1_Channel1_IRQHandler
+ *fill*         0x0000000008002d16        0x2 
+ .text.__errno  0x0000000008002d18        0xc /opt/Atollic_TrueSTUDIO_for_STM32_x86_64_9.3.0/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/../../../../arm-atollic-eabi/lib/armv6-m/libc_nano.a(lib_a-errno.o)
+                0x0000000008002d18                __errno
  .text.__libc_init_array
-                0x0000000008002d14       0x48 /opt/Atollic_TrueSTUDIO_for_STM32_x86_64_9.3.0/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/../../../../arm-atollic-eabi/lib/armv6-m/libc_nano.a(lib_a-init.o)
-                0x0000000008002d14                __libc_init_array
- .text.memcpy   0x0000000008002d5c       0x12 /opt/Atollic_TrueSTUDIO_for_STM32_x86_64_9.3.0/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/../../../../arm-atollic-eabi/lib/armv6-m/libc_nano.a(lib_a-memcpy-stub.o)
-                0x0000000008002d5c                memcpy
- .text.memset   0x0000000008002d6e       0x10 /opt/Atollic_TrueSTUDIO_for_STM32_x86_64_9.3.0/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/../../../../arm-atollic-eabi/lib/armv6-m/libc_nano.a(lib_a-memset.o)
-                0x0000000008002d6e                memset
- *fill*         0x0000000008002d7e        0x2 
- .text.sprintf  0x0000000008002d80       0x44 /opt/Atollic_TrueSTUDIO_for_STM32_x86_64_9.3.0/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/../../../../arm-atollic-eabi/lib/armv6-m/libc_nano.a(lib_a-sprintf.o)
-                0x0000000008002d80                siprintf
-                0x0000000008002d80                sprintf
+                0x0000000008002d24       0x48 /opt/Atollic_TrueSTUDIO_for_STM32_x86_64_9.3.0/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/../../../../arm-atollic-eabi/lib/armv6-m/libc_nano.a(lib_a-init.o)
+                0x0000000008002d24                __libc_init_array
+ .text.memcpy   0x0000000008002d6c       0x12 /opt/Atollic_TrueSTUDIO_for_STM32_x86_64_9.3.0/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/../../../../arm-atollic-eabi/lib/armv6-m/libc_nano.a(lib_a-memcpy-stub.o)
+                0x0000000008002d6c                memcpy
+ .text.memset   0x0000000008002d7e       0x10 /opt/Atollic_TrueSTUDIO_for_STM32_x86_64_9.3.0/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/../../../../arm-atollic-eabi/lib/armv6-m/libc_nano.a(lib_a-memset.o)
+                0x0000000008002d7e                memset
+ *fill*         0x0000000008002d8e        0x2 
+ .text.sprintf  0x0000000008002d90       0x44 /opt/Atollic_TrueSTUDIO_for_STM32_x86_64_9.3.0/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/../../../../arm-atollic-eabi/lib/armv6-m/libc_nano.a(lib_a-sprintf.o)
+                0x0000000008002d90                siprintf
+                0x0000000008002d90                sprintf
  .text._malloc_r
-                0x0000000008002dc4       0xbc /opt/Atollic_TrueSTUDIO_for_STM32_x86_64_9.3.0/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/../../../../arm-atollic-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-mallocr.o)
-                0x0000000008002dc4                _malloc_r
+                0x0000000008002dd4       0xbc /opt/Atollic_TrueSTUDIO_for_STM32_x86_64_9.3.0/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/../../../../arm-atollic-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-mallocr.o)
+                0x0000000008002dd4                _malloc_r
  .text.__ssputs_r
-                0x0000000008002e80       0xc4 /opt/Atollic_TrueSTUDIO_for_STM32_x86_64_9.3.0/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/../../../../arm-atollic-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-svfprintf.o)
-                0x0000000008002e80                __ssputs_r
+                0x0000000008002e90       0xc4 /opt/Atollic_TrueSTUDIO_for_STM32_x86_64_9.3.0/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/../../../../arm-atollic-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-svfprintf.o)
+                0x0000000008002e90                __ssputs_r
  .text._svfprintf_r
-                0x0000000008002f44      0x208 /opt/Atollic_TrueSTUDIO_for_STM32_x86_64_9.3.0/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/../../../../arm-atollic-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-svfprintf.o)
-                0x0000000008002f44                _svfprintf_r
-                0x0000000008002f44                _svfiprintf_r
+                0x0000000008002f54      0x208 /opt/Atollic_TrueSTUDIO_for_STM32_x86_64_9.3.0/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/../../../../arm-atollic-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-svfprintf.o)
+                0x0000000008002f54                _svfprintf_r
+                0x0000000008002f54                _svfiprintf_r
  .text._printf_common
-                0x000000000800314c       0xda /opt/Atollic_TrueSTUDIO_for_STM32_x86_64_9.3.0/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/../../../../arm-atollic-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-vfprintf_i.o)
-                0x000000000800314c                _printf_common
- *fill*         0x0000000008003226        0x2 
+                0x000000000800315c       0xda /opt/Atollic_TrueSTUDIO_for_STM32_x86_64_9.3.0/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/../../../../arm-atollic-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-vfprintf_i.o)
+                0x000000000800315c                _printf_common
+ *fill*         0x0000000008003236        0x2 
  .text._printf_i
-                0x0000000008003228      0x234 /opt/Atollic_TrueSTUDIO_for_STM32_x86_64_9.3.0/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/../../../../arm-atollic-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-vfprintf_i.o)
-                0x0000000008003228                _printf_i
- .text._sbrk_r  0x000000000800345c       0x24 /opt/Atollic_TrueSTUDIO_for_STM32_x86_64_9.3.0/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/../../../../arm-atollic-eabi/lib/armv6-m/libc_nano.a(lib_a-sbrkr.o)
-                0x000000000800345c                _sbrk_r
- .text.memchr   0x0000000008003480       0x16 /opt/Atollic_TrueSTUDIO_for_STM32_x86_64_9.3.0/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/../../../../arm-atollic-eabi/lib/armv6-m/libc_nano.a(lib_a-memchr-stub.o)
-                0x0000000008003480                memchr
- .text.memmove  0x0000000008003496       0x24 /opt/Atollic_TrueSTUDIO_for_STM32_x86_64_9.3.0/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/../../../../arm-atollic-eabi/lib/armv6-m/libc_nano.a(lib_a-memmove.o)
-                0x0000000008003496                memmove
+                0x0000000008003238      0x234 /opt/Atollic_TrueSTUDIO_for_STM32_x86_64_9.3.0/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/../../../../arm-atollic-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-vfprintf_i.o)
+                0x0000000008003238                _printf_i
+ .text._sbrk_r  0x000000000800346c       0x24 /opt/Atollic_TrueSTUDIO_for_STM32_x86_64_9.3.0/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/../../../../arm-atollic-eabi/lib/armv6-m/libc_nano.a(lib_a-sbrkr.o)
+                0x000000000800346c                _sbrk_r
+ .text.memchr   0x0000000008003490       0x16 /opt/Atollic_TrueSTUDIO_for_STM32_x86_64_9.3.0/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/../../../../arm-atollic-eabi/lib/armv6-m/libc_nano.a(lib_a-memchr-stub.o)
+                0x0000000008003490                memchr
+ .text.memmove  0x00000000080034a6       0x24 /opt/Atollic_TrueSTUDIO_for_STM32_x86_64_9.3.0/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/../../../../arm-atollic-eabi/lib/armv6-m/libc_nano.a(lib_a-memmove.o)
+                0x00000000080034a6                memmove
  .text.__malloc_lock
-                0x00000000080034ba        0x2 /opt/Atollic_TrueSTUDIO_for_STM32_x86_64_9.3.0/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/../../../../arm-atollic-eabi/lib/armv6-m/libc_nano.a(lib_a-mlock.o)
-                0x00000000080034ba                __malloc_lock
+                0x00000000080034ca        0x2 /opt/Atollic_TrueSTUDIO_for_STM32_x86_64_9.3.0/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/../../../../arm-atollic-eabi/lib/armv6-m/libc_nano.a(lib_a-mlock.o)
+                0x00000000080034ca                __malloc_lock
  .text.__malloc_unlock
-                0x00000000080034bc        0x2 /opt/Atollic_TrueSTUDIO_for_STM32_x86_64_9.3.0/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/../../../../arm-atollic-eabi/lib/armv6-m/libc_nano.a(lib_a-mlock.o)
-                0x00000000080034bc                __malloc_unlock
- *fill*         0x00000000080034be        0x2 
- .text._free_r  0x00000000080034c0       0x94 /opt/Atollic_TrueSTUDIO_for_STM32_x86_64_9.3.0/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/../../../../arm-atollic-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-freer.o)
-                0x00000000080034c0                _free_r
+                0x00000000080034cc        0x2 /opt/Atollic_TrueSTUDIO_for_STM32_x86_64_9.3.0/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/../../../../arm-atollic-eabi/lib/armv6-m/libc_nano.a(lib_a-mlock.o)
+                0x00000000080034cc                __malloc_unlock
+ *fill*         0x00000000080034ce        0x2 
+ .text._free_r  0x00000000080034d0       0x94 /opt/Atollic_TrueSTUDIO_for_STM32_x86_64_9.3.0/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/../../../../arm-atollic-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-freer.o)
+                0x00000000080034d0                _free_r
  .text._realloc_r
-                0x0000000008003554       0x4c /opt/Atollic_TrueSTUDIO_for_STM32_x86_64_9.3.0/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/../../../../arm-atollic-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-reallocr.o)
-                0x0000000008003554                _realloc_r
+                0x0000000008003564       0x4c /opt/Atollic_TrueSTUDIO_for_STM32_x86_64_9.3.0/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/../../../../arm-atollic-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-reallocr.o)
+                0x0000000008003564                _realloc_r
  .text._malloc_usable_size_r
-                0x00000000080035a0       0x10 /opt/Atollic_TrueSTUDIO_for_STM32_x86_64_9.3.0/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/../../../../arm-atollic-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-msizer.o)
-                0x00000000080035a0                _malloc_usable_size_r
+                0x00000000080035b0       0x10 /opt/Atollic_TrueSTUDIO_for_STM32_x86_64_9.3.0/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/../../../../arm-atollic-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-msizer.o)
+                0x00000000080035b0                _malloc_usable_size_r
  *(.glue_7)
- .glue_7        0x00000000080035b0        0x0 linker stubs
+ .glue_7        0x00000000080035c0        0x0 linker stubs
  *(.glue_7t)
- .glue_7t       0x00000000080035b0        0x0 linker stubs
+ .glue_7t       0x00000000080035c0        0x0 linker stubs
  *(.eh_frame)
- .eh_frame      0x00000000080035b0        0x0 /opt/Atollic_TrueSTUDIO_for_STM32_x86_64_9.3.0/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/armv6-m/crtbegin.o
+ .eh_frame      0x00000000080035c0        0x0 /opt/Atollic_TrueSTUDIO_for_STM32_x86_64_9.3.0/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/armv6-m/crtbegin.o
  *(.init)
- .init          0x00000000080035b0        0x4 /opt/Atollic_TrueSTUDIO_for_STM32_x86_64_9.3.0/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/armv6-m/crti.o
-                0x00000000080035b0                _init
- .init          0x00000000080035b4        0x8 /opt/Atollic_TrueSTUDIO_for_STM32_x86_64_9.3.0/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/armv6-m/crtn.o
+ .init          0x00000000080035c0        0x4 /opt/Atollic_TrueSTUDIO_for_STM32_x86_64_9.3.0/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/armv6-m/crti.o
+                0x00000000080035c0                _init
+ .init          0x00000000080035c4        0x8 /opt/Atollic_TrueSTUDIO_for_STM32_x86_64_9.3.0/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/armv6-m/crtn.o
  *(.fini)
- .fini          0x00000000080035bc        0x4 /opt/Atollic_TrueSTUDIO_for_STM32_x86_64_9.3.0/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/armv6-m/crti.o
-                0x00000000080035bc                _fini
- .fini          0x00000000080035c0        0x8 /opt/Atollic_TrueSTUDIO_for_STM32_x86_64_9.3.0/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/armv6-m/crtn.o
-                0x00000000080035c8                . = ALIGN (0x4)
-                0x00000000080035c8                _etext = .
+ .fini          0x00000000080035cc        0x4 /opt/Atollic_TrueSTUDIO_for_STM32_x86_64_9.3.0/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/armv6-m/crti.o
+                0x00000000080035cc                _fini
+ .fini          0x00000000080035d0        0x8 /opt/Atollic_TrueSTUDIO_for_STM32_x86_64_9.3.0/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/armv6-m/crtn.o
+                0x00000000080035d8                . = ALIGN (0x4)
+                0x00000000080035d8                _etext = .
 
-.vfp11_veneer   0x00000000080035c8        0x0
- .vfp11_veneer  0x00000000080035c8        0x0 linker stubs
+.vfp11_veneer   0x00000000080035d8        0x0
+ .vfp11_veneer  0x00000000080035d8        0x0 linker stubs
 
-.v4_bx          0x00000000080035c8        0x0
- .v4_bx         0x00000000080035c8        0x0 linker stubs
+.v4_bx          0x00000000080035d8        0x0
+ .v4_bx         0x00000000080035d8        0x0 linker stubs
 
-.iplt           0x00000000080035c8        0x0
- .iplt          0x00000000080035c8        0x0 /opt/Atollic_TrueSTUDIO_for_STM32_x86_64_9.3.0/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/armv6-m/crtbegin.o
+.iplt           0x00000000080035d8        0x0
+ .iplt          0x00000000080035d8        0x0 /opt/Atollic_TrueSTUDIO_for_STM32_x86_64_9.3.0/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/armv6-m/crtbegin.o
 
-.rodata         0x00000000080035c8      0x9ac
-                0x00000000080035c8                . = ALIGN (0x4)
+.rodata         0x00000000080035d8      0x9ac
+                0x00000000080035d8                . = ALIGN (0x4)
  *(.rodata)
- .rodata        0x00000000080035c8       0x20 Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.o
+ .rodata        0x00000000080035d8       0x20 Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.o
  *(.rodata*)
  .rodata.CSWTCH.50
-                0x00000000080035e8        0x4 Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_uart.o
+                0x00000000080035f8        0x4 Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_uart.o
  .rodata.main.str1.1
-                0x00000000080035ec        0x6 Src/main.o
+                0x00000000080035fc        0x6 Src/main.o
  .rodata.render_time_value.str1.1
-                0x00000000080035f2        0x8 Src/main.o
+                0x0000000008003602        0x8 Src/main.o
  .rodata.test_screen_function.str1.1
-                0x00000000080035fa        0x8 Src/main.o
+                0x000000000800360a        0x8 Src/main.o
  .rodata.AHBPrescTable
-                0x0000000008003602       0x10 Src/system_stm32f0xx.o
-                0x0000000008003602                AHBPrescTable
+                0x0000000008003612       0x10 Src/system_stm32f0xx.o
+                0x0000000008003612                AHBPrescTable
  .rodata.APBPrescTable
-                0x0000000008003612        0x8 Src/system_stm32f0xx.o
-                0x0000000008003612                APBPrescTable
+                0x0000000008003622        0x8 Src/system_stm32f0xx.o
+                0x0000000008003622                APBPrescTable
  .rodata.u8g2_font_ncenB14_tr
-                0x000000000800361a      0x851 Src/u8g2_fonts.o
-                0x000000000800361a                u8g2_font_ncenB14_tr
- *fill*         0x0000000008003e6b        0x1 
+                0x000000000800362a      0x851 Src/u8g2_fonts.o
+                0x000000000800362a                u8g2_font_ncenB14_tr
+ *fill*         0x0000000008003e7b        0x1 
  .rodata.u8g2_cb_r0
-                0x0000000008003e6c        0xc Src/u8g2_setup.o
-                0x0000000008003e6c                u8g2_cb_r0
+                0x0000000008003e7c        0xc Src/u8g2_setup.o
+                0x0000000008003e7c                u8g2_cb_r0
  .rodata.u8x8_d_ssd1306_128x32_univision_flip0_seq
-                0x0000000008003e78        0x7 Src/u8x8_d_ssd1306_128x32.o
+                0x0000000008003e88        0x7 Src/u8x8_d_ssd1306_128x32.o
  .rodata.u8x8_d_ssd1306_128x32_univision_flip1_seq
-                0x0000000008003e7f        0x7 Src/u8x8_d_ssd1306_128x32.o
+                0x0000000008003e8f        0x7 Src/u8x8_d_ssd1306_128x32.o
  .rodata.u8x8_d_ssd1306_128x32_univision_init_seq
-                0x0000000008003e86       0x35 Src/u8x8_d_ssd1306_128x32.o
+                0x0000000008003e96       0x35 Src/u8x8_d_ssd1306_128x32.o
  .rodata.u8x8_d_ssd1306_128x32_univision_powersave0_seq
-                0x0000000008003ebb        0x5 Src/u8x8_d_ssd1306_128x32.o
+                0x0000000008003ecb        0x5 Src/u8x8_d_ssd1306_128x32.o
  .rodata.u8x8_d_ssd1306_128x32_univision_powersave1_seq
-                0x0000000008003ec0        0x5 Src/u8x8_d_ssd1306_128x32.o
- *fill*         0x0000000008003ec5        0x3 
+                0x0000000008003ed0        0x5 Src/u8x8_d_ssd1306_128x32.o
+ *fill*         0x0000000008003ed5        0x3 
  .rodata.u8x8_ssd1306_128x32_univision_display_info
-                0x0000000008003ec8       0x18 Src/u8x8_d_ssd1306_128x32.o
+                0x0000000008003ed8       0x18 Src/u8x8_d_ssd1306_128x32.o
  .rodata.__sf_fake_stderr
-                0x0000000008003ee0       0x20 /opt/Atollic_TrueSTUDIO_for_STM32_x86_64_9.3.0/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/../../../../arm-atollic-eabi/lib/armv6-m/libc_nano.a(lib_a-findfp.o)
-                0x0000000008003ee0                __sf_fake_stderr
+                0x0000000008003ef0       0x20 /opt/Atollic_TrueSTUDIO_for_STM32_x86_64_9.3.0/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/../../../../arm-atollic-eabi/lib/armv6-m/libc_nano.a(lib_a-findfp.o)
+                0x0000000008003ef0                __sf_fake_stderr
  .rodata.__sf_fake_stdin
-                0x0000000008003f00       0x20 /opt/Atollic_TrueSTUDIO_for_STM32_x86_64_9.3.0/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/../../../../arm-atollic-eabi/lib/armv6-m/libc_nano.a(lib_a-findfp.o)
-                0x0000000008003f00                __sf_fake_stdin
+                0x0000000008003f10       0x20 /opt/Atollic_TrueSTUDIO_for_STM32_x86_64_9.3.0/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/../../../../arm-atollic-eabi/lib/armv6-m/libc_nano.a(lib_a-findfp.o)
+                0x0000000008003f10                __sf_fake_stdin
  .rodata.__sf_fake_stdout
-                0x0000000008003f20       0x20 /opt/Atollic_TrueSTUDIO_for_STM32_x86_64_9.3.0/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/../../../../arm-atollic-eabi/lib/armv6-m/libc_nano.a(lib_a-findfp.o)
-                0x0000000008003f20                __sf_fake_stdout
+                0x0000000008003f30       0x20 /opt/Atollic_TrueSTUDIO_for_STM32_x86_64_9.3.0/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/../../../../arm-atollic-eabi/lib/armv6-m/libc_nano.a(lib_a-findfp.o)
+                0x0000000008003f30                __sf_fake_stdout
  .rodata._svfprintf_r.str1.1
-                0x0000000008003f40       0x11 /opt/Atollic_TrueSTUDIO_for_STM32_x86_64_9.3.0/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/../../../../arm-atollic-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-svfprintf.o)
+                0x0000000008003f50       0x11 /opt/Atollic_TrueSTUDIO_for_STM32_x86_64_9.3.0/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/../../../../arm-atollic-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-svfprintf.o)
  .rodata._printf_i.str1.1
-                0x0000000008003f51       0x22 /opt/Atollic_TrueSTUDIO_for_STM32_x86_64_9.3.0/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/../../../../arm-atollic-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-vfprintf_i.o)
-                0x0000000008003f74                . = ALIGN (0x4)
- *fill*         0x0000000008003f73        0x1 
+                0x0000000008003f61       0x22 /opt/Atollic_TrueSTUDIO_for_STM32_x86_64_9.3.0/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/../../../../arm-atollic-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-vfprintf_i.o)
+                0x0000000008003f84                . = ALIGN (0x4)
+ *fill*         0x0000000008003f83        0x1 
 
-.rel.dyn        0x0000000008003f74        0x0
- .rel.iplt      0x0000000008003f74        0x0 /opt/Atollic_TrueSTUDIO_for_STM32_x86_64_9.3.0/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/armv6-m/crtbegin.o
+.rel.dyn        0x0000000008003f84        0x0
+ .rel.iplt      0x0000000008003f84        0x0 /opt/Atollic_TrueSTUDIO_for_STM32_x86_64_9.3.0/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/armv6-m/crtbegin.o
 
 .ARM.extab
  *(.ARM.extab* .gnu.linkonce.armextab.*)
 
-.ARM            0x0000000008003f74        0x0
-                0x0000000008003f74                __exidx_start = .
+.ARM            0x0000000008003f84        0x0
+                0x0000000008003f84                __exidx_start = .
  *(.ARM.exidx*)
-                0x0000000008003f74                __exidx_end = .
+                0x0000000008003f84                __exidx_end = .
 
-.preinit_array  0x0000000008003f74        0x0
-                0x0000000008003f74                PROVIDE (__preinit_array_start, .)
+.preinit_array  0x0000000008003f84        0x0
+                0x0000000008003f84                PROVIDE (__preinit_array_start, .)
  *(.preinit_array*)
-                0x0000000008003f74                PROVIDE (__preinit_array_end, .)
+                0x0000000008003f84                PROVIDE (__preinit_array_end, .)
 
-.init_array     0x0000000008003f74        0x4
-                0x0000000008003f74                PROVIDE (__init_array_start, .)
+.init_array     0x0000000008003f84        0x4
+                0x0000000008003f84                PROVIDE (__init_array_start, .)
  *(SORT(.init_array.*))
  *(.init_array*)
- .init_array    0x0000000008003f74        0x4 /opt/Atollic_TrueSTUDIO_for_STM32_x86_64_9.3.0/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/armv6-m/crtbegin.o
-                0x0000000008003f78                PROVIDE (__init_array_end, .)
+ .init_array    0x0000000008003f84        0x4 /opt/Atollic_TrueSTUDIO_for_STM32_x86_64_9.3.0/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/armv6-m/crtbegin.o
+                0x0000000008003f88                PROVIDE (__init_array_end, .)
 
-.fini_array     0x0000000008003f78        0x4
+.fini_array     0x0000000008003f88        0x4
                 [!provide]                        PROVIDE (__fini_array_start, .)
  *(SORT(.fini_array.*))
  *(.fini_array*)
- .fini_array    0x0000000008003f78        0x4 /opt/Atollic_TrueSTUDIO_for_STM32_x86_64_9.3.0/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/armv6-m/crtbegin.o
+ .fini_array    0x0000000008003f88        0x4 /opt/Atollic_TrueSTUDIO_for_STM32_x86_64_9.3.0/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/armv6-m/crtbegin.o
                 [!provide]                        PROVIDE (__fini_array_end, .)
-                0x0000000008003f7c                _sidata = LOADADDR (.data)
+                0x0000000008003f8c                _sidata = LOADADDR (.data)
 
-.data           0x0000000020000000       0x6c load address 0x0000000008003f7c
+.data           0x0000000020000000       0x6c load address 0x0000000008003f8c
                 0x0000000020000000                . = ALIGN (0x4)
                 0x0000000020000000                _sdata = .
  *(.data)
@@ -9592,11 +9592,11 @@ LOAD /opt/Atollic_TrueSTUDIO_for_STM32_x86_64_9.3.0/ARMTools/bin/../lib/gcc/arm-
                 0x000000002000006c                . = ALIGN (0x4)
                 0x000000002000006c                _edata = .
 
-.igot.plt       0x000000002000006c        0x0 load address 0x0000000008003fe8
+.igot.plt       0x000000002000006c        0x0 load address 0x0000000008003ff8
  .igot.plt      0x000000002000006c        0x0 /opt/Atollic_TrueSTUDIO_for_STM32_x86_64_9.3.0/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/armv6-m/crtbegin.o
                 0x000000002000006c                . = ALIGN (0x4)
 
-.bss            0x000000002000006c      0x2b8 load address 0x0000000008003fe8
+.bss            0x000000002000006c      0x2b8 load address 0x0000000008003ff8
                 0x000000002000006c                _sbss = .
                 0x000000002000006c                __bss_start__ = _sbss
  *(.bss)
@@ -9660,7 +9660,7 @@ LOAD /opt/Atollic_TrueSTUDIO_for_STM32_x86_64_9.3.0/ARMTools/bin/../lib/gcc/arm-
                 0x0000000020000324                __bss_end__ = _ebss
 
 ._user_heap_stack
-                0x0000000020000324      0x600 load address 0x0000000008003fe8
+                0x0000000020000324      0x600 load address 0x0000000008003ff8
                 0x0000000020000324                . = ALIGN (0x4)
                 0x0000000020000324                PROVIDE (end, .)
                 [!provide]                        PROVIDE (_end, .)
@@ -9792,7 +9792,7 @@ LOAD /opt/Atollic_TrueSTUDIO_for_STM32_x86_64_9.3.0/ARMTools/bin/../lib/gcc/arm-
                 0x00000000000009cc       0x1e /opt/Atollic_TrueSTUDIO_for_STM32_x86_64_9.3.0/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/armv6-m/crtn.o
 OUTPUT(spot_welding_timmer.elf elf32-littlearm)
 
-.debug_info     0x0000000000000000    0x78516
+.debug_info     0x0000000000000000    0x78531
  .debug_info    0x0000000000000000      0xe2b Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.o
  .debug_info    0x0000000000000e2b      0xfdb Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.o
  .debug_info    0x0000000000001e06      0xe4c Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_gpio.o
@@ -9803,28 +9803,28 @@ OUTPUT(spot_welding_timmer.elf elf32-littlearm)
  .debug_info    0x0000000000009308     0x3bff Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim.o
  .debug_info    0x000000000000cf07     0x1932 Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.o
  .debug_info    0x000000000000e839     0x2071 Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_uart.o
- .debug_info    0x00000000000108aa     0x746f Src/main.o
- .debug_info    0x0000000000017d19     0x19b9 Src/stm32f0xx_hal_msp.o
- .debug_info    0x00000000000196d2      0xf7a Src/stm32f0xx_it.o
- .debug_info    0x000000000001a64c      0xfe1 Src/syscalls.o
- .debug_info    0x000000000001b62d      0xa67 Src/system_stm32f0xx.o
- .debug_info    0x000000000001c094     0x5e90 Src/u8g2_buffer.o
- .debug_info    0x0000000000021f24     0x7390 Src/u8g2_d_memory.o
- .debug_info    0x00000000000292b4    0x20a7d Src/u8g2_d_setup.o
- .debug_info    0x0000000000049d31     0x69db Src/u8g2_font.o
- .debug_info    0x000000000005070c     0xa424 Src/u8g2_fonts.o
- .debug_info    0x000000000005ab30     0x5445 Src/u8g2_hvline.o
- .debug_info    0x000000000005ff75     0x51e1 Src/u8g2_intersection.o
- .debug_info    0x0000000000065156     0x5263 Src/u8g2_ll_hvline.o
- .debug_info    0x000000000006a3b9     0x60b1 Src/u8g2_setup.o
- .debug_info    0x000000000007046a     0x16c0 Src/u8x8_8x8.o
- .debug_info    0x0000000000071b2a     0x1cac Src/u8x8_byte.o
- .debug_info    0x00000000000737d6     0x1afa Src/u8x8_cad.o
- .debug_info    0x00000000000752d0      0xd91 Src/u8x8_d_ssd1306_128x32.o
- .debug_info    0x0000000000076061      0xf4a Src/u8x8_display.o
- .debug_info    0x0000000000076fab      0x9d1 Src/u8x8_gpio.o
- .debug_info    0x000000000007797c      0xb21 Src/u8x8_setup.o
- .debug_info    0x000000000007849d       0x79 startup/startup_stm32f030x6.o
+ .debug_info    0x00000000000108aa     0x748a Src/main.o
+ .debug_info    0x0000000000017d34     0x19b9 Src/stm32f0xx_hal_msp.o
+ .debug_info    0x00000000000196ed      0xf7a Src/stm32f0xx_it.o
+ .debug_info    0x000000000001a667      0xfe1 Src/syscalls.o
+ .debug_info    0x000000000001b648      0xa67 Src/system_stm32f0xx.o
+ .debug_info    0x000000000001c0af     0x5e90 Src/u8g2_buffer.o
+ .debug_info    0x0000000000021f3f     0x7390 Src/u8g2_d_memory.o
+ .debug_info    0x00000000000292cf    0x20a7d Src/u8g2_d_setup.o
+ .debug_info    0x0000000000049d4c     0x69db Src/u8g2_font.o
+ .debug_info    0x0000000000050727     0xa424 Src/u8g2_fonts.o
+ .debug_info    0x000000000005ab4b     0x5445 Src/u8g2_hvline.o
+ .debug_info    0x000000000005ff90     0x51e1 Src/u8g2_intersection.o
+ .debug_info    0x0000000000065171     0x5263 Src/u8g2_ll_hvline.o
+ .debug_info    0x000000000006a3d4     0x60b1 Src/u8g2_setup.o
+ .debug_info    0x0000000000070485     0x16c0 Src/u8x8_8x8.o
+ .debug_info    0x0000000000071b45     0x1cac Src/u8x8_byte.o
+ .debug_info    0x00000000000737f1     0x1afa Src/u8x8_cad.o
+ .debug_info    0x00000000000752eb      0xd91 Src/u8x8_d_ssd1306_128x32.o
+ .debug_info    0x000000000007607c      0xf4a Src/u8x8_display.o
+ .debug_info    0x0000000000076fc6      0x9d1 Src/u8x8_gpio.o
+ .debug_info    0x0000000000077997      0xb21 Src/u8x8_setup.o
+ .debug_info    0x00000000000784b8       0x79 startup/startup_stm32f030x6.o
 
 .debug_abbrev   0x0000000000000000     0x4aa4
  .debug_abbrev  0x0000000000000000      0x2d1 Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.o
@@ -9957,7 +9957,7 @@ OUTPUT(spot_welding_timmer.elf elf32-littlearm)
  .debug_aranges
                 0x0000000000002798       0x28 startup/startup_stm32f030x6.o
 
-.debug_ranges   0x0000000000000000     0x2d18
+.debug_ranges   0x0000000000000000     0x2d20
  .debug_ranges  0x0000000000000000       0xa0 Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.o
  .debug_ranges  0x00000000000000a0      0x120 Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.o
  .debug_ranges  0x00000000000001c0       0x70 Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_gpio.o
@@ -9968,29 +9968,29 @@ OUTPUT(spot_welding_timmer.elf elf32-littlearm)
  .debug_ranges  0x00000000000005f8      0x470 Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim.o
  .debug_ranges  0x0000000000000a68       0xe0 Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.o
  .debug_ranges  0x0000000000000b48      0x1f0 Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_uart.o
- .debug_ranges  0x0000000000000d38       0xc0 Src/main.o
- .debug_ranges  0x0000000000000df8      0x170 Src/stm32f0xx_hal_msp.o
- .debug_ranges  0x0000000000000f68       0x30 Src/stm32f0xx_it.o
- .debug_ranges  0x0000000000000f98       0xa0 Src/syscalls.o
- .debug_ranges  0x0000000000001038       0x18 Src/system_stm32f0xx.o
- .debug_ranges  0x0000000000001050       0x68 Src/u8g2_buffer.o
- .debug_ranges  0x00000000000010b8      0x410 Src/u8g2_d_memory.o
- .debug_ranges  0x00000000000014c8     0x11c0 Src/u8g2_d_setup.o
- .debug_ranges  0x0000000000002688      0x1a0 Src/u8g2_font.o
- .debug_ranges  0x0000000000002828       0x90 Src/u8g2_hvline.o
- .debug_ranges  0x00000000000028b8       0x18 Src/u8g2_intersection.o
- .debug_ranges  0x00000000000028d0       0x18 Src/u8g2_ll_hvline.o
- .debug_ranges  0x00000000000028e8       0x98 Src/u8g2_setup.o
- .debug_ranges  0x0000000000002980      0x160 Src/u8x8_8x8.o
- .debug_ranges  0x0000000000002ae0       0xa0 Src/u8x8_byte.o
- .debug_ranges  0x0000000000002b80       0xb0 Src/u8x8_cad.o
- .debug_ranges  0x0000000000002c30       0x20 Src/u8x8_d_ssd1306_128x32.o
- .debug_ranges  0x0000000000002c50       0x70 Src/u8x8_display.o
- .debug_ranges  0x0000000000002cc0       0x10 Src/u8x8_gpio.o
- .debug_ranges  0x0000000000002cd0       0x28 Src/u8x8_setup.o
- .debug_ranges  0x0000000000002cf8       0x20 startup/startup_stm32f030x6.o
+ .debug_ranges  0x0000000000000d38       0xc8 Src/main.o
+ .debug_ranges  0x0000000000000e00      0x170 Src/stm32f0xx_hal_msp.o
+ .debug_ranges  0x0000000000000f70       0x30 Src/stm32f0xx_it.o
+ .debug_ranges  0x0000000000000fa0       0xa0 Src/syscalls.o
+ .debug_ranges  0x0000000000001040       0x18 Src/system_stm32f0xx.o
+ .debug_ranges  0x0000000000001058       0x68 Src/u8g2_buffer.o
+ .debug_ranges  0x00000000000010c0      0x410 Src/u8g2_d_memory.o
+ .debug_ranges  0x00000000000014d0     0x11c0 Src/u8g2_d_setup.o
+ .debug_ranges  0x0000000000002690      0x1a0 Src/u8g2_font.o
+ .debug_ranges  0x0000000000002830       0x90 Src/u8g2_hvline.o
+ .debug_ranges  0x00000000000028c0       0x18 Src/u8g2_intersection.o
+ .debug_ranges  0x00000000000028d8       0x18 Src/u8g2_ll_hvline.o
+ .debug_ranges  0x00000000000028f0       0x98 Src/u8g2_setup.o
+ .debug_ranges  0x0000000000002988      0x160 Src/u8x8_8x8.o
+ .debug_ranges  0x0000000000002ae8       0xa0 Src/u8x8_byte.o
+ .debug_ranges  0x0000000000002b88       0xb0 Src/u8x8_cad.o
+ .debug_ranges  0x0000000000002c38       0x20 Src/u8x8_d_ssd1306_128x32.o
+ .debug_ranges  0x0000000000002c58       0x70 Src/u8x8_display.o
+ .debug_ranges  0x0000000000002cc8       0x10 Src/u8x8_gpio.o
+ .debug_ranges  0x0000000000002cd8       0x28 Src/u8x8_setup.o
+ .debug_ranges  0x0000000000002d00       0x20 startup/startup_stm32f030x6.o
 
-.debug_line     0x0000000000000000     0xd9a7
+.debug_line     0x0000000000000000     0xd9b4
  .debug_line    0x0000000000000000      0x41f Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.o
  .debug_line    0x000000000000041f      0x3f2 Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.o
  .debug_line    0x0000000000000811      0x400 Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_gpio.o
@@ -10001,28 +10001,28 @@ OUTPUT(spot_welding_timmer.elf elf32-littlearm)
  .debug_line    0x0000000000002ef9     0x12d5 Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim.o
  .debug_line    0x00000000000041ce      0x777 Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.o
  .debug_line    0x0000000000004945      0xd7d Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_uart.o
- .debug_line    0x00000000000056c2      0x58b Src/main.o
- .debug_line    0x0000000000005c4d      0x3d9 Src/stm32f0xx_hal_msp.o
- .debug_line    0x0000000000006026      0x2ec Src/stm32f0xx_it.o
- .debug_line    0x0000000000006312      0x39a Src/syscalls.o
- .debug_line    0x00000000000066ac      0x23c Src/system_stm32f0xx.o
- .debug_line    0x00000000000068e8      0x2fc Src/u8g2_buffer.o
- .debug_line    0x0000000000006be4      0xb2d Src/u8g2_d_memory.o
- .debug_line    0x0000000000007711     0x3cea Src/u8g2_d_setup.o
- .debug_line    0x000000000000b3fb      0x77a Src/u8g2_font.o
- .debug_line    0x000000000000bb75      0x11e Src/u8g2_fonts.o
- .debug_line    0x000000000000bc93      0x200 Src/u8g2_hvline.o
- .debug_line    0x000000000000be93      0x15d Src/u8g2_intersection.o
- .debug_line    0x000000000000bff0      0x1c3 Src/u8g2_ll_hvline.o
- .debug_line    0x000000000000c1b3      0x3b7 Src/u8g2_setup.o
- .debug_line    0x000000000000c56a      0x442 Src/u8x8_8x8.o
- .debug_line    0x000000000000c9ac      0x440 Src/u8x8_byte.o
- .debug_line    0x000000000000cdec      0x4cf Src/u8x8_cad.o
- .debug_line    0x000000000000d2bb      0x19f Src/u8x8_d_ssd1306_128x32.o
- .debug_line    0x000000000000d45a      0x236 Src/u8x8_display.o
- .debug_line    0x000000000000d690      0x11d Src/u8x8_gpio.o
- .debug_line    0x000000000000d7ad      0x177 Src/u8x8_setup.o
- .debug_line    0x000000000000d924       0x83 startup/startup_stm32f030x6.o
+ .debug_line    0x00000000000056c2      0x598 Src/main.o
+ .debug_line    0x0000000000005c5a      0x3d9 Src/stm32f0xx_hal_msp.o
+ .debug_line    0x0000000000006033      0x2ec Src/stm32f0xx_it.o
+ .debug_line    0x000000000000631f      0x39a Src/syscalls.o
+ .debug_line    0x00000000000066b9      0x23c Src/system_stm32f0xx.o
+ .debug_line    0x00000000000068f5      0x2fc Src/u8g2_buffer.o
+ .debug_line    0x0000000000006bf1      0xb2d Src/u8g2_d_memory.o
+ .debug_line    0x000000000000771e     0x3cea Src/u8g2_d_setup.o
+ .debug_line    0x000000000000b408      0x77a Src/u8g2_font.o
+ .debug_line    0x000000000000bb82      0x11e Src/u8g2_fonts.o
+ .debug_line    0x000000000000bca0      0x200 Src/u8g2_hvline.o
+ .debug_line    0x000000000000bea0      0x15d Src/u8g2_intersection.o
+ .debug_line    0x000000000000bffd      0x1c3 Src/u8g2_ll_hvline.o
+ .debug_line    0x000000000000c1c0      0x3b7 Src/u8g2_setup.o
+ .debug_line    0x000000000000c577      0x442 Src/u8x8_8x8.o
+ .debug_line    0x000000000000c9b9      0x440 Src/u8x8_byte.o
+ .debug_line    0x000000000000cdf9      0x4cf Src/u8x8_cad.o
+ .debug_line    0x000000000000d2c8      0x19f Src/u8x8_d_ssd1306_128x32.o
+ .debug_line    0x000000000000d467      0x236 Src/u8x8_display.o
+ .debug_line    0x000000000000d69d      0x11d Src/u8x8_gpio.o
+ .debug_line    0x000000000000d7ba      0x177 Src/u8x8_setup.o
+ .debug_line    0x000000000000d931       0x83 startup/startup_stm32f030x6.o
 
 .debug_str      0x0000000000000000    0x138b0
  .debug_str     0x0000000000000000      0x93e Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.o

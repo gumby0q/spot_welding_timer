@@ -657,12 +657,19 @@ static void MX_GPIO_Init(void)
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOA, TRIAC_CONTROL_Pin|TEST_LED_Pin, GPIO_PIN_RESET);
 
-  /*Configure GPIO pins : TRIAC_CONTROL_Pin TEST_LED_Pin */
-  GPIO_InitStruct.Pin = TRIAC_CONTROL_Pin|TEST_LED_Pin;
+  /*Configure GPIO pin : TRIAC_CONTROL_Pin */
+  GPIO_InitStruct.Pin = TRIAC_CONTROL_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(TRIAC_CONTROL_GPIO_Port, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : TEST_LED_Pin */
+  GPIO_InitStruct.Pin = TEST_LED_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_OD;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+  HAL_GPIO_Init(TEST_LED_GPIO_Port, &GPIO_InitStruct);
 
   /*Configure GPIO pin : BUTTON_Pin */
   GPIO_InitStruct.Pin = BUTTON_Pin;
